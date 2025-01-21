@@ -57,7 +57,10 @@ public class StreamWithCustomObject {
 				.sorted(Comparator.comparing(Book::getPages).reversed())
 				.limit(3).collect(Collectors.toList());
 		
-		longestBooks.stream().forEach(System.out::println);
+		//longestBooks.stream().forEach(System.out::println);
+		
+		books.stream()
+        .filter(b -> b.getTitle().split(" ").length==2).forEach(System.out::println);
 
 	}
 
